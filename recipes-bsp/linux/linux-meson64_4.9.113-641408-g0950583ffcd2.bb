@@ -1,7 +1,8 @@
 DEPENDS = "libgcc"
 PROVIDES = "linux-dreambox"
 
-require recipes-kernel/linux/linux-dreambox.inc
+# Remove linux-dreambox.inc for now!
+# require recipes-kernel/linux/linux-dreambox.inc
 
 SRC_URI = "https://dreamboxupdate.com/download/opendreambox/${BPN}/${BPN}-v${PV}.tar.xz"
 SRC_URI[md5sum] = "4c1588929db0310443933acf4e483250"
