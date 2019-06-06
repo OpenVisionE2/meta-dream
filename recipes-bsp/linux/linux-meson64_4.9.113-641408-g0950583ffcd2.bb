@@ -1,6 +1,9 @@
 DEPENDS = "libgcc"
 PROVIDES = "linux-dreambox"
 
+LICENSE = "CLOSED"
+LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=7f60a8314f5ae7d0bed856bd375a4423"
+
 # Remove linux-dreambox.inc for now!
 # require recipes-kernel/linux/linux-dreambox.inc
 
