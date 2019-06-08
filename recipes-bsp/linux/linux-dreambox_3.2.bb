@@ -39,6 +39,7 @@ SRC_URI = " \
 			file://027-kernel-add-support-for-gcc9.patch \
 			file://028-move-atomic-flags-field-after-cputime-expires-field.patch \
 			file://029-dvb_frontend-backport-multistream-support.patch \
+			file://030-fix-build-with-gcc7.patch \
 			file://defconfig \
 "
 
