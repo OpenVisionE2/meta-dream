@@ -1,4 +1,4 @@
-IMAGE_CMD_jffs2nfi = " \
+IMAGE_CMD_jffs2_prepend = " \
 	mkfs.jffs2 \
 		--root=${IMAGE_ROOTFS}/boot \
 		--compression-mode=none \
@@ -21,7 +21,7 @@ IMAGE_CMD_jffs2nfi = " \
 	rm -f ${DEPLOY_DIR_IMAGE}/*.nfi; \
 "
 
-IMAGE_CMD_ubinfi = " \
+IMAGE_CMD_ubifs_prepend = " \
 	mkfs.jffs2 \
 		--root=${IMAGE_ROOTFS}/boot \
 		--compression-mode=none \
@@ -65,10 +65,10 @@ IMAGE_CMD_ubinfi = " \
 	rm -f ${DEPLOY_DIR_IMAGE}/*.nfi; \
 "
 
-EXTRA_IMAGECMD_jffs2nfi ?= "-e ${DREAMBOX_ERASE_BLOCK_SIZE} -n -l"
-EXTRA_IMAGECMD_ubinfi ?= "-e ${DREAMBOX_ERASE_BLOCK_SIZE} -n -l"
+EXTRA_IMAGECMD_jffs2 ?= "-e ${DREAMBOX_ERASE_BLOCK_SIZE} -n -l"
+EXTRA_IMAGECMD_ubifs ?= "-e ${DREAMBOX_ERASE_BLOCK_SIZE} -n -l"
 
 do_image_jffs2[depends] += "dreambox-buildimage-native:do_populate_sysroot"
 do_image_ubifs[depends] += "dreambox-buildimage-native:do_populate_sysroot"
 
-IMAGE_TYPES += "jffs2nfi ubinfi"
+IMAGE_TYPES += "jffs2 ubifs"
