@@ -45,9 +45,9 @@ do_install_append() {
 }
 
 # Set FILES for vmlinux package, so that kernel-image gets those files.
-FILES_kernel-vmlinux = "boot/vmlinux-3.2-${MACHINE}.gz"
+FILES_${KERNEL_PACKAGE_NAME}-vmlinux = "boot/vmlinux-3.2-${MACHINE}.gz"
 ALLOW_EMPTY_kernel-vmlinux = "1"
-FILES_kernel-image += "\
+FILES_${KERNEL_PACKAGE_NAME}-image += "\
 	/${KERNEL_IMAGEDEST}/autoexec*.bat \
 	"
 
