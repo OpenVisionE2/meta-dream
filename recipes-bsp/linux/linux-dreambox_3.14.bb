@@ -10,15 +10,18 @@ PATCHREV = "6fa88d2001194cbff63ad94cb713b6cd5ea02739"
 PATCHLEVEL = "79"
 
 SRC_URI = " \
-    ${KERNELORG_MIRROR}/linux/kernel/v3.x/linux-${PV}.tar.xz;name=kernel \
-    ${KERNELORG_MIRROR}/linux/kernel/v3.x/patch-${PV}.${PATCHLEVEL}.xz;apply=yes;name=stable-patch \
-    http://dreamboxupdate.com/download/kernel-patches/linux-dreambox-${PV}-${PATCHREV}.patch.xz;apply=yes;name=dream-patch \
-    file://defconfig \
-    file://0001-Support-TBS-USB-drivers.patch \
-    file://0001-STV-Add-PLS-support.patch \
-    file://0001-STV-Add-SNR-Signal-report-parameters.patch \
-    file://0001-stv090x-optimized-TS-sync-control.patch \
-    file://blindscan2.patch \
+	${KERNELORG_MIRROR}/linux/kernel/v3.x/linux-${PV}.tar.xz;name=kernel \
+	${KERNELORG_MIRROR}/linux/kernel/v3.x/patch-${PV}.${PATCHLEVEL}.xz;apply=yes;name=stable-patch \
+	http://dreamboxupdate.com/download/kernel-patches/linux-dreambox-${PV}-${PATCHREV}.patch.xz;apply=yes;name=dream-patch \
+	file://defconfig \
+	file://0001-Support-TBS-USB-drivers.patch \
+	file://0002-STV-Add-PLS-support.patch \
+	file://0003-STV-Add-SNR-Signal-report-parameters.patch \
+	file://0004-stv090x-optimized-TS-sync-control.patch \
+	file://0005-log2-give-up-on-gcc-constant-optimizations.patch \
+	file://0006-uaccess-dont-mark-register-as-const.patch \
+	file://0007-makefile-silence-packed-not-aligned-warn.patch \
+	file://0008-blindscan2.patch \
 "
 
 SRC_URI[kernel.md5sum] = "b621207b3f6ecbb67db18b13258f8ea8"
