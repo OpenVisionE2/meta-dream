@@ -10,13 +10,15 @@ PATCHREV = "30070c78a23d461935d9db0b6ce03afc70a10c51"
 PATCHLEVEL = "113"
 
 SRC_URI = " \
-    ${KERNELORG_MIRROR}/linux/kernel/v3.x/linux-${PV}.tar.xz;name=kernel \
-    ${KERNELORG_MIRROR}/linux/kernel/v3.x/patch-${PV}.${PATCHLEVEL}.xz;apply=yes;name=stable-patch \
-    http://dreamboxupdate.com/download/kernel-patches/linux-dreambox-${PV}-${PATCHREV}.patch.xz;apply=yes;name=dream-patch \
-    file://dvb_frontend-Multistream-support-3.4.patch \
-    file://kernel-add-support-for-gcc6.patch \
-    file://defconfig \
+	${KERNELORG_MIRROR}/linux/kernel/v3.x/linux-${PV}.tar.xz;name=kernel \
+	${KERNELORG_MIRROR}/linux/kernel/v3.x/patch-${PV}.${PATCHLEVEL}.xz;apply=yes;name=stable-patch \
+	http://dreamboxupdate.com/download/kernel-patches/linux-dreambox-${PV}-${PATCHREV}.patch.xz;apply=yes;name=dream-patch \
+	file://0001-dvb_frontend-Multistream-support-3.4.patch \
+	file://0002-fix-build-with-gcc7.patch \
+	file://0003-log2-give-up-on-gcc-constant-optimizations.patch \
+	file://defconfig \
 "
+
 SRC_URI[kernel.md5sum] = "967f72983655e2479f951195953e8480"
 SRC_URI[kernel.sha256sum] = "ff3dee6a855873d12487a6f4070ec2f7996d073019171361c955639664baa0c6"
 SRC_URI[stable-patch.md5sum] = "cbd978b714f37b648fbcf92482372223"
