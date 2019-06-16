@@ -9,12 +9,12 @@ IMAGE_CMD_jffs2_prepend = " \
 		--root=${IMAGE_ROOTFS} \
 		--disable-compressor=lzo \
 		--compression-mode=size \
-		--output=${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}.rootfs.jffs2 \
+		--output=${IMGDEPLOYDIR}/${IMAGE_NAME}.rootfs.jffs2 \
 		${EXTRA_IMAGECMD}; \
 	${DREAMBOX_BUILDIMAGE} \
 		--boot-partition ${DREAMBOX_PART0_SIZE}:${DEPLOY_DIR_IMAGE}/secondstage-${MACHINE}.bin \
 		--data-partition ${DREAMBOX_PART1_SIZE}:${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}.boot.jffs2 \
-		--data-partition ${DREAMBOX_PART2_SIZE}:${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}.rootfs.jffs2 \
+		--data-partition ${DREAMBOX_PART2_SIZE}:${IMGDEPLOYDIR}/${IMAGE_NAME}.rootfs.jffs2 \
 		> ${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}${DMTYPE}.nfi; \
 	rm -f ${DEPLOY_DIR_IMAGE}/*.zip; \
 	zip -j ${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}${DMTYPE}_nfi.zip ${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}${DMTYPE}.nfi; \
