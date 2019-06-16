@@ -52,7 +52,7 @@ KERNEL_ALT_IMAGETYPE_dm7080 = "vmlinux.bin"
 
 KERNEL_ENABLE_CGROUPS = "1"
 
-RDEPENDS_kernel-image = "flash-scripts"
+RDEPENDS_${KERNEL_PACKAGE_NAME}-image = "flash-scripts"
 
 pkg_postinst_kernel-image () {
 #!/bin/sh

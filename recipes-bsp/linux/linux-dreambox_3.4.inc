@@ -24,8 +24,8 @@ do_install_append() {
 
 PACKAGES += "kernel-image-dbg"
 
-FILES_kernel-image-dbg = "/${KERNEL_IMAGEDEST}/.debug"
-FILES_kernel-vmlinux = "/boot/vmlinux-${LINUX_VERSION}.gz"
+FILES_${KERNEL_PACKAGE_NAME}-image-dbg = "/${KERNEL_IMAGEDEST}/.debug"
+FILES_${KERNEL_PACKAGE_NAME}-vmlinux = "/boot/vmlinux-${LINUX_VERSION}.gz"
 
 python populate_packages_prepend() {
     import shutil
