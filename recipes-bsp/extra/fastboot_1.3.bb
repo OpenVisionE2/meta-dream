@@ -8,3 +8,11 @@ inherit opendreambox-precompiled-binary
 PACKAGE_ARCH = "${MACHINE}"
 
 COMPATIBLE_MACHINE = "^(dm7080)$"
+
+SRC_URI += "file://LICENSE-CLOSE"
+
+do_license() {
+	mv ${WORKDIR}/LICENSE-CLOSE ${B}/LICENSE-CLOSE
+}
+
+addtask do_license before do_populate_lic after do_unpack
