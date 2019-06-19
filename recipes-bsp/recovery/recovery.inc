@@ -3,8 +3,6 @@ HOMEPAGE = "http://dreamboxupdate.com/"
 LICENSE = "CLOSED"
 DEPENDS = "coreutils-native udev"
 
-PR = "r1"
-
 inherit pkgconfig update-rc.d
 
 SRC_URI_append = ";branch=${BRANCH}"
