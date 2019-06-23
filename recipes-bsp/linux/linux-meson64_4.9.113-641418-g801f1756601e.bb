@@ -25,6 +25,12 @@ KERNEL_IMAGETYPES = "Image.gz"
 export KCFLAGS = "-Wno-error=misleading-indentation \
                   -Wno-error=parentheses \
                   -Wno-error=shift-overflow \
-                  -Wno-error=unused-const-variable"
+                  -Wno-error=unused-const-variable \
+                  -Wno-error=array-bounds \
+                  -Wno-error=address-of-packed-member \
+                  -Wno-error=maybe-uninitialized \
+                  -Wno-error=missing-attributes \
+                  -Wno-error=unused-variable \
+                  "
 
 KERNEL_FLASH_ARGS = "-c '${CMDLINE}'"
