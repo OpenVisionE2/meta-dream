@@ -43,7 +43,6 @@ python __anonymous() {
 
     d.setVar('PKG_kernel-image-%s' % imagetype.lower(), 'kernel-image')
     d.appendVar('RPROVIDES_kernel-image-%s' % imagetype.lower(), ' kernel-image-${KERNEL_VERSION_PKG_NAME}')
-    d.appendVar('RDEPENDS_kernel-image-%s' % imagetype.lower(), ' flash-scripts')
     d.setVar('RDEPENDS_kernel-base', 'kernel-image-%s' % imagetype.lower())
 }
 

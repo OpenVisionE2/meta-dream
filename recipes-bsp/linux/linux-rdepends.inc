@@ -1,5 +1,3 @@
-DEPENDS += "linux-firmware zd1211-firmware"
-
 RDEPENDS_kernel-module-carl9170 ?= "linux-firmware-carl9170"
 RDEPENDS_kernel-module-r8712u ?= "linux-firmware-rtl8192su"
 RDEPENDS_kernel-module-rt2800usb ?= "linux-firmware-rt2800usb"
