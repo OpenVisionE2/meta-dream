@@ -33,4 +33,8 @@ export KCFLAGS = "-Wno-error=misleading-indentation \
                   -Wno-error=unused-variable \
                   "
 
+do_install_prepend() {
+	mv ${B}/arch/arm64/boot/dts/amlogic/dreamone.dtb ${B}/arch/arm64/boot/
+}
+
 KERNEL_FLASH_ARGS = "-c '${CMDLINE}'"
