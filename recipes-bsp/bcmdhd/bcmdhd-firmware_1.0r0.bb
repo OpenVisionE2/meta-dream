@@ -4,3 +4,11 @@ SRC_URI[all.sha256sum] = "a09a769e5513a85ebbc11f29696b1cb8bf67555cd0b44339420704
 inherit opendreambox-precompiled-binary
 
 require bcmdhd-firmware.inc
+
+SRC_URI += "file://LICENSE-CLOSE"
+
+do_license() {
+	mv ${WORKDIR}/LICENSE-CLOSE ${B}/LICENSE-CLOSE
+}
+
+addtask do_license before do_populate_lic after do_unpack
