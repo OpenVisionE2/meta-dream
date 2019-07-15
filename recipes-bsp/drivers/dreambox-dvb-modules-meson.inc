@@ -45,4 +45,4 @@ if [ -z "$D" ]; then
 fi
 }
 
-inherit opendreambox-precompiled-binary
+inherit opendreambox-precompiled-binary-new
