@@ -1,7 +1,7 @@
 SUMMARY = "Hardware V4L drivers for ${MACHINE}"
 HOMEPAGE = "http://linuxtv.org/"
 SECTION = "kernel/modules"
-require conf/license/openpli-gplv2.inc
+require conf/license/openvision-gplv2.inc
 
 inherit module
 DEPENDS += "virtual/kernel"
