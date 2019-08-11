@@ -57,13 +57,7 @@ RDEPENDS_${KERNEL_PACKAGE_NAME}-image = "flash-scripts"
 pkg_postinst_kernel-image () {
 #!/bin/sh
 if [ -z "$D" ]; then
-    if [ `uname -r | grep 3.4 | grep dm520 | wc -l` == 1 ]; then
-        dd if=/boot/zImage-3.4-4.0-dm520 of=/dev/mmcblk0p1
-    elif [ `uname -r | grep 3.4 | grep dm820 | wc -l` == 1 ]; then
-        dd if=/boot/zImage-3.4-4.0-dm820 of=/dev/mmcblk0p1
-    elif [ `uname -r | grep 3.4 | grep dm7080 | wc -l` == 1 ]; then
-        dd if=/boot/zImage-3.4-4.0-dm7080 of=/dev/mmcblk0p1
-    fi
+    flash-kernel /${KERNEL_IMAGEDEST}/${KERNEL_IMAGETYPE}-${LINUX_VERSION}
 fi
 }
 
