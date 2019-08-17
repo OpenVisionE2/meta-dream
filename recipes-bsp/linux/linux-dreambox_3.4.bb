@@ -57,8 +57,7 @@ RDEPENDS_${KERNEL_PACKAGE_NAME}-image = "flash-scripts"
 pkg_postinst_kernel-image () {
 #!/bin/sh
 if [ -z "$D" ]; then
-    flash-kernel /${KERNEL_IMAGEDEST}/${KERNEL_IMAGETYPE}-${LINUX_VERSION}
-    dd if=/usr/share/dreambox-secondstage/ssbl.bin of=/dev/mmcblk0
+     dd if=/usr/share/dreambox-secondstage/ssbl.bin of=/dev/mmcblk0
 fi
 }
 
