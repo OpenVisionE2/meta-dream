@@ -6,7 +6,6 @@ DEPENDS = "coreutils-native udev"
 inherit pkgconfig update-rc.d
 
 SRC_URI_append = ";branch=${BRANCH} \
-                  file://remove-conv-option.patch \
                   file://remove-lcd-anim-bin-from-arc-images.patch \
 "
 
