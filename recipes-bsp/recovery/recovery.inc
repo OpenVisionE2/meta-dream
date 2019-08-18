@@ -60,7 +60,7 @@ RDEPENDS_flash-scripts = " \
 "
 RDEPENDS_flash-scripts_append_dm820 = " \
     ${EMMCRDEPENDS_flash-scripts} \
-    mkbootblob \
+    ${FASTBOOTRDEPENDS_flash-scripts} \
 "
 RDEPENDS_flash-scripts_append_dm7080 = " \
     ${EMMCRDEPENDS_flash-scripts} \
