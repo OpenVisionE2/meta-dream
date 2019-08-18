@@ -2,7 +2,7 @@ inherit kernel machine_kernel_pr
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-MACHINE_KERNEL_PR_append = ".1"
+MACHINE_KERNEL_PR_append = ".2"
 
 COMPATIBLE_MACHINE = "dm900|dm920"
 
