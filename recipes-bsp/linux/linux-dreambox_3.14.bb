@@ -2,7 +2,7 @@ inherit kernel machine_kernel_pr
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-MACHINE_KERNEL_PR_append = ".2"
+MACHINE_KERNEL_PR_append = ".3"
 
 COMPATIBLE_MACHINE = "dm900|dm920"
 
@@ -22,6 +22,7 @@ SRC_URI = " \
 	file://0006-uaccess-dont-mark-register-as-const.patch \
 	file://0007-makefile-silence-packed-not-aligned-warn.patch \
 	file://0008-blindscan2.patch \
+	file://0009-Add-overlayfs.patch
 "
 
 SRC_URI[kernel.md5sum] = "b621207b3f6ecbb67db18b13258f8ea8"
