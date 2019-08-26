@@ -12,9 +12,9 @@ PACKAGES = "${PN}"
 S = "${WORKDIR}/dreambox-secondstage_${PV}_${MACHINE}"
 
 do_install() {
-    install -d ${D}/usr/share/dreambox-secondstage
-    install -m 0644 ${S}/usr/share/dreambox-secondstage/ssbl.bin ${D}/usr/share/dreambox-secondstage/ssbl.bin
+    install -d ${D}${datadir}/dreambox-secondstage
+    install -m 0644 ${S}${datadir}/dreambox-secondstage/ssbl.bin ${D}${datadir}/dreambox-secondstage/ssbl.bin
 }
 
 RDEPENDS_${PN} = "flash-scripts"
-FILES_${PN} = "/usr/share/dreambox-secondstage/ssbl.bin"
+FILES_${PN} = "${datadir}/dreambox-secondstage/ssbl.bin"

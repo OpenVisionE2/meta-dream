@@ -13,8 +13,8 @@ do_compile() {
 }
 
 do_install() {
-    install -d ${D}/etc/init.d/
-    install -m 0755 ${WORKDIR}/dm-shutdown.sh ${D}/etc/init.d/dm-shutdown
+    install -d ${D}${sysconfdir}/init.d/
+    install -m 0755 ${WORKDIR}/dm-shutdown.sh ${D}${sysconfdir}/init.d/dm-shutdown
 }
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
