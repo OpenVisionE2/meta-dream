@@ -1,5 +1,5 @@
-SRC_URI[dreamone.md5sum] = "57b43917b240661e4b0fe1218af58d12"
-SRC_URI[dreamone.sha256sum] = "96beb0f55cba347243e92c3af385d7d4425a9b5c8935ad87d318c90c659f3712"
+SRC_URI[dreamone.md5sum] = "7481bda80eea1621dd6777135c599994"
+SRC_URI[dreamone.sha256sum] = "8c2738f47553866011cd6367ecda1a4dc23e64e948eb0cb0ea18fd27e1143652"
 
 require dreambox-dvb-modules-meson.inc
 
