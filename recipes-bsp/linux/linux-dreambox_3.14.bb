@@ -2,8 +2,6 @@ inherit kernel machine_kernel_pr
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-MACHINE_KERNEL_PR_append = ".3"
-
 COMPATIBLE_MACHINE = "dm900|dm920"
 
 PATCHREV = "6fa88d2001194cbff63ad94cb713b6cd5ea02739"
