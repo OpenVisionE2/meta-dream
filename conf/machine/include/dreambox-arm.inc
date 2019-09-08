@@ -6,6 +6,7 @@ MTD_ROOTFS = "mmcblk0p2"
 MTD_KERNEL = "mmcblk0p1"
 KERNEL_FILE = "kernel.bin"
 ROOTFS_FILE = "rootfs.tar.bz2"
+MTD_BLACK  = "mmcblk0"
 
 DISTRO_FEATURES_GFX_mipsel ?= " opengl"
 
