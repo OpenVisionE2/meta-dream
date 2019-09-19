@@ -85,6 +85,8 @@ SRC_URI[unionfs.sha256sum] = "b2e04936254bbf778c963de862061027c858a2e157bb2e48c7
 S = "${WORKDIR}/linux-${PV}"
 B = "${WORKDIR}/build"
 
+KERNEL_CONFIG_COMMAND = "oe_runmake -C ${S} O=${B} oldconfig"
+
 do_configure_prepend() {
 	rm -rf ${STAGING_KERNEL_DIR}/.cofig
 	rm -rf ${STAGING_KERNEL_DIR}/.config
