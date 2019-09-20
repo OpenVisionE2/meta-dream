@@ -43,7 +43,7 @@ MACHINE_EXTRA_RRECOMMENDS += "\
 GLIBC_EXTRA_OECONF = "--with-tls --with-__thread"
 DVBMEDIASINK_CONFIG = "--with-dts=no"
 OLDEST_KERNEL = "2.6.18"
-GCCVERSION = "9.1.0"
+GCCVERSION = "9.2.0"
 GLIBCVERSION = "2.19"
 
 PREFERRED_VERSION_gcc-cross-initial-${TARGET_ARCH} = ""
