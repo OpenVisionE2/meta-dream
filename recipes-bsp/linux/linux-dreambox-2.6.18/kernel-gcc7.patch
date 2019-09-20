@@ -321,13 +321,13 @@ diff -Naur linux-2.6.18.orig/include/linux/compiler-gcc9.h linux-2.6.18/include/
 diff -Naur linux-2.6.18.orig/include/linux/compiler.h linux-2.6.18/include/linux/compiler.h
 --- linux-2.6.18.orig/include/linux/compiler.h	2006-09-20 05:42:06.000000000 +0200
 +++ linux-2.6.18/include/linux/compiler.h	2017-08-24 09:53:42.447358784 +0200
-@@ -36,8 +36,15 @@
+@@ -36,8 +36,16 @@
  
  #ifdef __KERNEL__
  
 -#if __GNUC__ > 4
-+#if __GNUC__ > 7
--#error no compiler-gcc.h file for this gcc version
++#if __GNUC__ > 10
+ #error no compiler-gcc.h file for this gcc version
 +#elif __GNUC__ == 9
 +# include <linux/compiler-gcc9.h>
 +#elif __GNUC__ == 7
