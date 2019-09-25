@@ -1,0 +1,20 @@
+diff --git a/lib/dvb/frontendparms.h b/lib/dvb/frontendparms.h
+index 9d17148f2..5f60044e6 100644
+--- a/lib/dvb/frontendparms.h
++++ b/lib/dvb/frontendparms.h
+@@ -14,7 +14,6 @@
+ 
+ #include <linux/dvb/frontend.h>
+ 
+-#ifdef HAVE_OLDE2_API
+ #ifndef NO_STREAM_ID_FILTER
+ #define NO_STREAM_ID_FILTER    (~0U)
+ #endif
+@@ -22,7 +21,6 @@
+ #ifndef DTV_STREAM_ID
+ #define DTV_STREAM_ID DTV_ISDBS_TS_ID
+ #endif
+-#endif
+ 
+ class eDVBFrontendParametersSatellite
+ {

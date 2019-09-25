@@ -18,16 +18,16 @@ do_install() {
 }
 
 pkg_postinst_${PN}() {
-	mkdir -p $D${sysconfdir}/enigma2
-	touch $D${sysconfdir}/enigma2/settings
-	sed -i '/config\.inputDevices\.event2/d' $D${sysconfdir}/enigma2/settings
-	sed -i '/config\.inputDevices\.event1/d' $D${sysconfdir}/enigma2/settings
-	echo "config.inputDevices.event2.repeat=250" >> $D${sysconfdir}/enigma2/settings
-	echo "config.inputDevices.event2.enabled=true" >> $D${sysconfdir}/enigma2/settings
-	echo "config.inputDevices.event2.name=dreambox advanced remote control (native)" >> $D${sysconfdir}/enigma2/settings
-	echo "config.inputDevices.event1.repeat=250" >> $D${sysconfdir}/enigma2/settings
-	echo "config.inputDevices.event1.enabled=true" >> $D${sysconfdir}/enigma2/settings
-	echo "config.inputDevices.event1.name=dreambox remote control (native)" >> $D${sysconfdir}/enigma2/settings
+	mkdir -p $D/etc/enigma2
+	touch $D/etc/enigma2/settings
+	sed -i '/config\.inputDevices\.event2/d' $D/etc/enigma2/settings
+	sed -i '/config\.inputDevices\.event1/d' $D/etc/enigma2/settings
+	echo "config.inputDevices.event2.repeat=250" >> $D/etc/enigma2/settings
+	echo "config.inputDevices.event2.enabled=true" >> $D/etc/enigma2/settings
+	echo "config.inputDevices.event2.name=dreambox advanced remote control (native)" >> $D/etc/enigma2/settings
+	echo "config.inputDevices.event1.repeat=250" >> $D/etc/enigma2/settings
+	echo "config.inputDevices.event1.enabled=true" >> $D/etc/enigma2/settings
+	echo "config.inputDevices.event1.name=dreambox remote control (native)" >> $D/etc/enigma2/settings
 }
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
