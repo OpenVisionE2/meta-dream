@@ -1214,7 +1214,7 @@ CONFIG_MTD_M25P80=y
 # CONFIG_MTD_SLRAM is not set
 # CONFIG_MTD_PHRAM is not set
 # CONFIG_MTD_MTDRAM is not set
-CONFIG_MTD_BLOCK2MTD=m
+# CONFIG_MTD_BLOCK2MTD is not set
 
 #
 # Disk-On-Chip Device Drivers
