@@ -64,7 +64,6 @@ PREFERRED_PROVIDER_virtual/libgl ?= "mesa-gl"
 PREFERRED_PROVIDER_virtual/mesa ?= "mesa-gl"
 PREFERRED_VERSION_linux-dreambox = "3.14"
 PREFERRED_VERSION_gnupg ?= "2.1.18"
-PREFERRED_VERSION_rt8812au = "4.3.14"
 
 TARGET_ARCH = "arm"
 DEFAULTTUNE = "cortexa15hf-neon-vfpv4"
