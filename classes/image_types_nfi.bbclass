@@ -1,4 +1,4 @@
-IMAGE_CMD_jffs2nfi = " \
+IMAGE_CMD_jffs2_prepend = " \
 	mkfs.jffs2 \
 		--root=${IMAGE_ROOTFS}/boot \
 		--compression-mode=none \
@@ -9,19 +9,19 @@ IMAGE_CMD_jffs2nfi = " \
 		--root=${IMAGE_ROOTFS} \
 		--disable-compressor=lzo \
 		--compression-mode=size \
-		--output=${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}.rootfs.jffs2 \
+		--output=${IMGDEPLOYDIR}/${IMAGE_NAME}.rootfs.jffs2 \
 		${EXTRA_IMAGECMD}; \
 	${DREAMBOX_BUILDIMAGE} \
 		--boot-partition ${DREAMBOX_PART0_SIZE}:${DEPLOY_DIR_IMAGE}/secondstage-${MACHINE}.bin \
 		--data-partition ${DREAMBOX_PART1_SIZE}:${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}.boot.jffs2 \
-		--data-partition ${DREAMBOX_PART2_SIZE}:${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}.rootfs.jffs2 \
+		--data-partition ${DREAMBOX_PART2_SIZE}:${IMGDEPLOYDIR}/${IMAGE_NAME}.rootfs.jffs2 \
 		> ${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}${DMTYPE}.nfi; \
 	rm -f ${DEPLOY_DIR_IMAGE}/*.zip; \
 	zip -j ${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}${DMTYPE}_nfi.zip ${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}${DMTYPE}.nfi; \
 	rm -f ${DEPLOY_DIR_IMAGE}/*.nfi; \
 "
 
-IMAGE_CMD_ubinfi = " \
+IMAGE_CMD_ubifs_prepend = " \
 	mkfs.jffs2 \
 		--root=${IMAGE_ROOTFS}/boot \
 		--compression-mode=none \
@@ -30,7 +30,7 @@ IMAGE_CMD_ubinfi = " \
 	rm -rf ${IMAGE_ROOTFS}/boot/*; \
 	echo \[root\] > ubinize.cfg; \
 	echo mode=ubi >> ubinize.cfg; \
-	echo image=${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}.rootfs.ubifs >> ubinize.cfg; \
+	echo image=${IMGDEPLOYDIR}/${IMAGE_NAME}.rootfs.ubifs >> ubinize.cfg; \
 	echo vol_id=0 >> ubinize.cfg; \
 	echo vol_name=${UBI_VOLNAME} >> ubinize.cfg; \
 	echo vol_type=dynamic >> ubinize.cfg; \
@@ -52,7 +52,7 @@ IMAGE_CMD_ubinfi = " \
 	fi; \
 	mkfs.ubifs \
 		-r ${IMAGE_ROOTFS} \
-		-o ${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}.rootfs.ubifs \
+		-o ${IMGDEPLOYDIR}/${IMAGE_NAME}.rootfs.ubifs \
 		${MKUBIFS_ARGS}; \
 	ubinize -o ${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}.rootfs.ubi ${UBINIZE_ARGS} ubinize.cfg; \
 	${DREAMBOX_BUILDIMAGE} \
@@ -65,10 +65,10 @@ IMAGE_CMD_ubinfi = " \
 	rm -f ${DEPLOY_DIR_IMAGE}/*.nfi; \
 "
 
-EXTRA_IMAGECMD_jffs2nfi ?= "-e ${DREAMBOX_ERASE_BLOCK_SIZE} -n -l"
-EXTRA_IMAGECMD_ubinfi ?= "-e ${DREAMBOX_ERASE_BLOCK_SIZE} -n -l"
+EXTRA_IMAGECMD_jffs2 ?= "-e ${DREAMBOX_ERASE_BLOCK_SIZE} -n -l"
+EXTRA_IMAGECMD_ubifs ?= "-e ${DREAMBOX_ERASE_BLOCK_SIZE} -n -l"
 
-IMAGE_DEPENDS_jffs2nfi = "${IMAGE_DEPENDS_jffs2} dreambox-buildimage-native"
-IMAGE_DEPENDS_ubinfi = "${IMAGE_DEPENDS_ubi} ${IMAGE_DEPENDS_ubifs} dreambox-buildimage-native"
+do_image_jffs2[depends] += "dreambox-buildimage-native:do_populate_sysroot"
+do_image_ubifs[depends] += "dreambox-buildimage-native:do_populate_sysroot"
 
-IMAGE_TYPES += "jffs2nfi ubinfi"
+IMAGE_TYPES += "jffs2 ubifs"
