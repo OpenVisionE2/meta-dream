@@ -25,16 +25,11 @@ EMMCRDEPENDS_flash-scripts = " \
 "
 
 NANDRDEPENDS_recovery = " \
-    mtd-utils-mkfs.ubifs \
-    mtd-utils-ubiattach \
-    mtd-utils-ubimkvol \
-    mtd-utils-ubirmvol \
-    mtd-utils-ubiformat \
+    mtd-utils-ubifs \
 "
 
 NANDRDEPENDS_flash-scripts = " \
-    mtd-utils-flash-erase \
-    mtd-utils-nandwrite \
+    mtd-utils \
 "
 
 FASTBOOTRDEPENDS_flash-scripts = " \
