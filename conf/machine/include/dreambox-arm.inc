@@ -37,7 +37,6 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	gstreamer1.0-libav \
 	kernel-module-hmac \
 	kernel-module-md4 \
-	kernel-module-snd-oss \
 	kernel-module-snd-pcm-oss \
 	"
 
