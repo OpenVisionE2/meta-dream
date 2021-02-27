@@ -52,6 +52,7 @@ KERNEL_MODULE_AUTOLOAD += "\
 	stb-core \
 	meson64 \
 	fp-dev \
+	bluetooth \
 	ble \
 	videograbber \
 	dreamframeinject \

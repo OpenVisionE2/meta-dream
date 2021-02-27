@@ -7,11 +7,12 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 require recipes-bsp/linux/linux-dreambox-dmamlogic.inc
 
 SRC_URI = "https://dreamboxupdate.com/download/opendreambox/linux-meson64/linux-meson64-v${PV}.tar.xz \
-    file://${OPENVISION_BASE}/meta-openvision/recipes-linux/kernel-patches/kernel-add-support-for-gcc${VISIONGCCVERSION}.patch \
-    "
+	file://${OPENVISION_BASE}/meta-openvision/recipes-linux/kernel-patches/kernel-add-support-for-gcc${VISIONGCCVERSION}.patch \
+	file://defconfig \
+	"
 
-SRC_URI[md5sum] = "c6f0c0bf8c2222f8883b20d4682f92f8"
-SRC_URI[sha256sum] = "569d318eaf78acf8da6bf84ef195ad9e30bc42245406eb3eb91c725f75ba7424"
+SRC_URI[md5sum] = "c0250b87218995f4f0b1d9bffd6dd597"
+SRC_URI[sha256sum] = "86eaa6ed3a40178abfea63b6569b5bd1a8e671c180738d7929caf2c8edec1a13"
 
 KERNEL_CC += "${TOOLCHAIN_OPTIONS}"
 KERNEL_LD += "${TOOLCHAIN_OPTIONS}"
@@ -22,7 +23,7 @@ CMDLINE = "logo=osd0,loaded,0x7f800000 vout=2160p50hz,enable hdmimode=2160p50hz 
 
 COMPATIBLE_MACHINE = "^(dreamone|dreamtwo)$"
 
-DEFCONFIG = "meson64"
+# DEFCONFIG = "meson64"
 
 LINUX_VERSION = "4.9"
 KERNEL_IMAGETYPES = "Image.gz"

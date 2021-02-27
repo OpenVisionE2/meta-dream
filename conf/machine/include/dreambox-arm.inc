@@ -32,6 +32,7 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	dreambox-dvb-modules-${MACHINE} \
 	libpagecache \
 	libpassthrough \
+	kernel-module-bluetooth \
 	kernel-module-hmac \
 	kernel-module-md4 \
 	kernel-module-snd-pcm-oss \
@@ -82,3 +83,5 @@ STB_PLATFORM = "dm4kgen"
 SOC_FAMILY = "bcm7252s"
 
 RCNAME = "dmm2"
+
+KERNEL_MODULE_AUTOLOAD += "bluetooth"

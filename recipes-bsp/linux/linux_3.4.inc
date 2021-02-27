@@ -32,22 +32,8 @@ do_configure_prepend() {
     if [ -n "${LOCALVERSION}" ]; then
         kernel_conf_variable LOCALVERSION "\"${LOCALVERSION}\""
     fi
-    kernel_conf_variable LOCALVERSION_AUTO n
 
-    kernel_conf_variable SYSFS_DEPRECATED n
     kernel_conf_variable SYSFS_DEPRECATED_V2 n
-    kernel_conf_variable HOTPLUG y
-    kernel_conf_variable UEVENT_HELPER_PATH \"\"
-    kernel_conf_variable UNIX y
-    kernel_conf_variable SYSFS y
-    kernel_conf_variable PROC_FS y
-    kernel_conf_variable TMPFS y
-    kernel_conf_variable INOTIFY_USER y
-    kernel_conf_variable SIGNALFD y
-    kernel_conf_variable TMPFS_POSIX_ACL y
-    kernel_conf_variable BLK_DEV_BSG y
-    kernel_conf_variable DEVTMPFS y
-    kernel_conf_variable DEVTMPFS_MOUNT y
 
     # Newer inits like systemd need cgroup support
     if [ "${KERNEL_ENABLE_CGROUPS}" = "1" ] ; then

@@ -44,7 +44,6 @@ do_configure_prepend() {
     kernel_conf_variable SYSFS_DEPRECATED n
     kernel_conf_variable SYSFS_DEPRECATED_V2 n
     kernel_conf_variable HOTPLUG y
-    kernel_conf_variable UEVENT_HELPER_PATH \"\"
     kernel_conf_variable SYSFS y
     kernel_conf_variable PROC_FS y
     kernel_conf_variable INOTIFY_USER y
@@ -67,31 +66,38 @@ do_configure_prepend() {
     kernel_conf_variable CDROM_PKTCDVD m
     kernel_conf_variable CDROM_PKTCDVD_BUFFERS=8
     kernel_conf_variable CDROM_PKTCDVD_WCACHE n
-    kernel_conf_variable UDF_FS m
     kernel_conf_variable DEFAULT_HOSTNAME="${MACHINE}"
     kernel_conf_variable PRINTK y
     kernel_conf_variable EXT2_FS m
-    kernel_conf_variable EXT3_FS m
     kernel_conf_variable EXT4_FS y
-    kernel_conf_variable AUTOFS4_FS m
-    kernel_conf_variable FUSE_FS m
-    kernel_conf_variable ISO9660_FS m
     kernel_conf_variable MSDOS_PARTITION y
     kernel_conf_variable FAT_FS y
-    kernel_conf_variable CRAMFS m
-    kernel_conf_variable SQUASHFS m
-    kernel_conf_variable JFFS2_FS m
-    kernel_conf_variable NFSD m
-    kernel_conf_variable CIFS m
     kernel_conf_variable USB_SERIAL_IUU m
     kernel_conf_variable FSCACHE y
-    kernel_conf_variable USB_SERIAL m
     kernel_conf_variable CHR_DEV_SG y
-    kernel_conf_variable NTFS_FS m
     kernel_conf_variable NTFS_RW n
-    kernel_conf_variable TUN m
     kernel_conf_variable FS_MBCACHE y
     kernel_conf_variable MTD_NAND_NANDSIM m
+    kernel_conf_variable MTD_BLOCK2MTD m
+    kernel_conf_variable INPUT_JOYDEV m
+    kernel_conf_variable USB_SERIAL_SIMPLE m
+    kernel_conf_variable INPUT_MOUSEDEV m
+    kernel_conf_variable XFS_FS m
+    kernel_conf_variable INPUT_MOUSE y
+    kernel_conf_variable INPUT_KEYBOARD y
+    kernel_conf_variable NLS_DEFAULT="utf8"
+    kernel_conf_variable HAVE_DMA_API_DEBUG y
+    kernel_conf_variable USB_SERIAL_GENERIC y
+    kernel_conf_variable USB_SERIAL_KEYSPAN m
+    kernel_conf_variable USB_SERIAL_WWAN m
+    kernel_conf_variable USB_SERIAL_OPTION m
+    kernel_conf_variable HID_A4TECH m
+    kernel_conf_variable HID_BELKIN m
+    kernel_conf_variable HID_EZKEY m
+    kernel_conf_variable HID_MICROSOFT m
+    kernel_conf_variable HID_LOGITECH m
+    kernel_conf_variable HID_LOGITECH_DJ m
+    kernel_conf_variable USB_HID m
 
     sed -e "${CONF_SED_SCRIPT}" \
     < '${WORKDIR}/defconfig' >>'${B}/.config'
